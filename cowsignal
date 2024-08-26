@@ -1,0 +1,32 @@
+
+    // ```
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+int main() {
+    freopen("cowsignal.in", "r", stdin); freopen("cowsignal.out", "w", stdout);
+
+    ios::sync_with_stdio(false) ;
+    cin.tie(nullptr) ;
+    cout.tie(nullptr) ;
+
+    int h ,w ,K;
+    cin >> h >> w >> K ;
+    for (int i = 0; i < h; i++) {
+        string S,s;
+        cin >> S ;
+        for(int j = 0; j < w; j++) {
+            for(int k = 0; k < K; k++) {
+                s+=S[j];
+            }
+        }
+        for(int j = 0; j < K; j++) {
+            cout<<s<<"\n";
+        }
+    }
+
+    return 0;
+}
+    //```
