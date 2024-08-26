@@ -1,0 +1,41 @@
+
+    // ```
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+int main() {
+    freopen("shuffle.in", "r", stdin); freopen("shuffle.out", "w", stdout);
+
+    ios::sync_with_stdio(false) ;
+    cin.tie(nullptr) ;
+    cout.tie(nullptr) ;
+
+    int n;
+    cin>>n;
+    int p[n];
+    int o[n];
+    for(int i=0;i<n;i++) {
+        cin>>p[i];
+    }
+    for(int i=0;i<n;i++) {
+        cin>>o[i];
+    }
+    int c[n];
+    for(int j=0;j<3;j++) {
+        for(int i=0;i<n;i++) {
+            c[i]=o[p[i]-1];
+        }
+        for(int i=0;i<n;i++) {
+            o[i]=c[i];
+        }
+    }
+    for(int i=0;i<n;i++) {
+        cout<<c[i]<<"\n";
+    }
+
+
+    return 0;
+}
+    //```
