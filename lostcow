@@ -1,0 +1,81 @@
+
+    // ```
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+using namespace std;
+int main() {
+    freopen("lostcow.in", "r", stdin); freopen("lostcow.out", "w", stdout);
+
+    ios::sync_with_stdio(false) ;
+    cin.tie(nullptr) ;
+    cout.tie(nullptr) ;
+
+    int x,y,z=1,t=0;
+    cin>>x>>y;
+    int p=x;
+    if(y>x) {
+        while(p<y) {
+            p=x;
+            if(p+z>y){p=y;t+=y-x;}
+            else {
+                p+=z;
+                t+=z;
+            }
+            //cout<<p<<" "<<t<<" "<<z<<" "<<endl ;
+            if(p>=y) {break;}
+            z*=2;
+            for(int i=p;i>x;i--) {
+                t++;
+            }
+            p=x;
+            p-=z;
+            t+=z;
+            //cout<<p<<" "<<t<<" "<<z<<" "<<endl ;
+            if(p>=y) {break;}
+            z*=2;
+            for(int i=p;i<x;i++) {
+                t++;
+            }
+
+
+        }
+        cout<<t;
+    }
+    else if(y<x) {
+        while(p>y) {
+            p=x;
+            p+=z;
+            t+=z;
+            //cout<<p<<" "<<t<<" "<<z<<" "<<endl ;
+            if(p>=y) {break;}
+            z*=2;
+            for(int i=p;i>x;i--) {
+                t++;
+            }
+            p=x;
+            if(x-z<y){p=x;t+=y-x;}
+            else {
+                p-=z;
+                t+=z;
+            }
+            p-=z;
+            t+=z;
+            //cout<<p<<" "<<t<<" "<<z<<" "<<endl ;
+            if(p>=y) {break;}
+            z*=2;
+            for(int i=p;i<x;i++) {
+                t++;
+            }
+
+
+        }
+        cout<<t;
+
+    }
+    else{cout<<0;}
+
+    return 0;
+}
+    //```
