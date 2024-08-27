@@ -1,0 +1,43 @@
+
+    // ```
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+
+    using namespace std;
+
+
+    void setIO(string s) {
+        ios_base::sync_with_stdio(0); cin.tie(0);
+        freopen((s+".in").c_str(),"r",stdin);
+        freopen((s+".out").c_str(),"w",stdout);
+    }
+    int main() {
+        // freopen("shuffle.in", "r", stdin); freopen("shuffle.out", "w", stdout);
+
+        setIO("blist");
+
+        ios::sync_with_stdio(false) ;
+        cin.tie(nullptr) ;
+        cout.tie(nullptr) ;
+
+        int n;
+        cin>>n;
+        int s[n],e[n],b[n],t=0;
+        int x[1000]={0};
+        for(int i=0;i<n;i++) {
+            cin>>s[i]>>e[i]>>b[i];
+            for(int j=s[i];j<=e[i];j++) {
+                x[j-1]+=b[i];
+            }
+        }
+        int ans = *max_element(x,x+1000);
+        cout<<ans<<endl;
+
+
+
+        return 0;
+    }
+
+    //```
