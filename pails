@@ -1,0 +1,39 @@
+
+    // ```
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+
+    using namespace std;
+
+
+    void setIO(string s) {
+        ios_base::sync_with_stdio(0); cin.tie(0);
+        freopen((s+".in").c_str(),"r",stdin);
+        freopen((s+".out").c_str(),"w",stdout);
+    }
+    int main() {
+        // freopen("shuffle.in", "r", stdin); freopen("shuffle.out", "w", stdout);
+
+        setIO("pails");
+
+        ios::sync_with_stdio(false) ;
+        cin.tie(nullptr) ;
+        cout.tie(nullptr) ;
+
+        int x,y,m,t;
+        cin>>x>>y>>m;
+        int ans =0;
+        for(int i=0;i*x<=m;i++) {
+            for(int j=0;i*x+j*y<=m;j++) {
+
+                t=i*x+j*y;
+                ans =max(ans,t);
+            }
+        }
+        cout<<ans<<endl ;
+
+        return 0;
+    }
+
+    //```
